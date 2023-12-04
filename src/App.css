@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.featproj {
+  color: white;
+  margin-bottom: 2.5rem;
+}
+
+.darkpanel {
+  background-color: #111827;
+}
