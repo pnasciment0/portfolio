@@ -16,9 +16,9 @@ const HomePage: React.FC = () => {
         <Panel>
           <h2 className="text-lg md:text-xl lg:text-2xl font-bold featproj">Featured Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <ProjectTile projectName="Walk the Vote" imageUrl={wtvLogo} />
+            <ProjectTile projectName="Walk the Vote" imageUrl={wtvLogo} description={""}/>
             <ProjectTile projectName="StarGrids" />
-            <ProjectTile projectName="Wtrd" />
+            <ProjectTile projectName="Fantasy Postseason Challenge" />
           </div>
           <div className="mt-8">
             <Link to="/projects" className="inline-block bg-blue-500 text-white py-2 px-6 rounded hover:bg-blue-600 active:bg-blue-700 transition duration-300">
