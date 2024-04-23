@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node src/server.ts",
-    "build": "tsc",
-    "serve": "node dist/server.js"
+    "start": "node dist/server.js",
+    "dev": "ts-node src/server.ts",
+    "build": "react-scripts build && tsc",
+    "heroku-postbuild": "npm run build"
   },
   "keywords": [],
   "author": "",

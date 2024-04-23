@@ -1,8 +1,9 @@
 import React from 'react';
 import Panel from '../components/Panel';
 import ProjectTile from '../components/ProjectTile';
-import wtvLogo from '../assets/wtvlogo.png';
+// import wtvLogo from '../../public/wtvlogo.png';
 import { Link } from 'react-router-dom';
+import projectsData from '../portfolioData.json';
 
 const HomePage: React.FC = () => {
     return (
@@ -16,7 +17,7 @@ const HomePage: React.FC = () => {
         <Panel>
           <h2 className="text-lg md:text-xl lg:text-2xl font-bold featproj">Featured Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <ProjectTile projectName="Walk the Vote" imageUrl={wtvLogo} description={""}/>
+            <ProjectTile projectName="Walk the Vote" imageUrl={"wtvlogo.png"} description={""}/>
             <ProjectTile projectName="StarGrids" />
             <ProjectTile projectName="Fantasy Postseason Challenge" />
           </div>
