@@ -19,7 +19,8 @@ import projectsData from '../portfolioData.json';
 type Project = {
   title: string;
   description: string;
-  imageUrl: string;
+  // imageUrl: string;
+  imageUrls: string[];
   techUsed: string[];
   projectLink: string;
   imageOnLeft: boolean;

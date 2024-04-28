@@ -3,7 +3,7 @@
     {
       "title": "Walk the Vote",
       "description": "Walk the Vote description",
-      "imageUrl": "/wtvlogo.png",
+      "imageUrls": ["/wtvscreenshot1.png", "/wtvscreenshot2.png"],
       "techUsed": [
         "Python",
         "Vue.js"
@@ -14,7 +14,7 @@
     {
       "title": "Wtrd",
       "description": "A plant care app",
-      "imageUrl": "link",
+      "imageUrls": ["link"],
       "techUsed": [
         "React",
         "TypeScript"
@@ -25,7 +25,7 @@
     {
       "title": "StarGrids",
       "description": "A daily 3x3 movie trivia game",
-      "imageUrl": "link",
+      "imageUrls": ["link"],
       "techUsed": [],
       "projectLink": "",
       "imageOnLeft": true
@@ -33,7 +33,7 @@
     {
       "title": "Fantasy Postseason Challenge",
       "description": "",
-      "imageUrl": "link",
+      "imageUrls": ["link"],
       "techUsed": [],
       "projectLink": "",
       "imageOnLeft": false

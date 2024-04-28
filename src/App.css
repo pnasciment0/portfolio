@@ -45,3 +45,29 @@
 .darkpanel {
   background-color: #111827;
 }
+
+/* Target the theater mode background */
+.project-panel .theater-mode-background {
+  background-color: black;  /* Ensures the background is black */
+  opacity: 0.75;            /* Semi-transparent */
+  padding: 20px;            /* Adds space around the image inside the background */
+  margin: -20px;            /* Expands the background outwards */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;              /* Ensures it stays behind other content */
+  border-radius: 8px;       /* Optional: Rounds the corners of the background */
+}
+
+/* Ensure the image and indicators are positioned correctly within the expanded background */
+.project-panel img,
+.project-panel .image-indicators {
+  position: relative;       /* Adjusts positioning to stay on top of the enlarged background */
+  z-index: 1;               /* Ensures these elements are above the background */
+}
+
+.left-image-color {
+  background-color: #4169E1;
+}
