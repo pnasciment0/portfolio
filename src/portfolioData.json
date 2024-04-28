@@ -3,6 +3,7 @@
     {
       "title": "Walk the Vote",
       "description": "Walk the Vote description",
+      "date": "Aug 2020 - Nov 2020",
       "imageUrls": ["/wtvscreenshot1.png", "/wtvscreenshot2.png"],
       "techUsed": [
         "Python",
@@ -14,6 +15,7 @@
     {
       "title": "Wtrd",
       "description": "A plant care app",
+      "date": "-",
       "imageUrls": ["link"],
       "techUsed": [
         "React",
@@ -25,6 +27,7 @@
     {
       "title": "StarGrids",
       "description": "A daily 3x3 movie trivia game",
+      "date": "-",
       "imageUrls": ["link"],
       "techUsed": [],
       "projectLink": "",
@@ -32,6 +35,7 @@
     },
     {
       "title": "Fantasy Postseason Challenge",
+      "date": "-",
       "description": "",
       "imageUrls": ["link"],
       "techUsed": [],

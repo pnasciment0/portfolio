@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 interface Project {
   title: string;
   description: string;
-  imageUrls: string[]; // Changed from imageUrl to imageUrls
+  date: string;
+  imageUrls: string[];
   techUsed: string[];
   projectLink: string;
   imageOnLeft: boolean;
@@ -14,29 +15,34 @@ interface ProjectPanelProps {
 }
 
 const ProjectPanel: React.FC<ProjectPanelProps> = ({ project }) => {
-  const { title, description, imageUrls, techUsed, projectLink, imageOnLeft } = project;
+  const { title, description, date, imageUrls, techUsed, projectLink, imageOnLeft } = project;
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [timer, setTimer] = useState<NodeJS.Timeout>();
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const resetAndStartTimer = () => {
-    if (timer) {
-      clearInterval(timer);
+    // Clear the existing timer
+    if (timerRef.current) {
+      console.log("Clearing old timer");
+      clearInterval(timerRef.current);
     }
-    const newTimer = setInterval(() => {
+
+    // Set a new timer
+    timerRef.current = setInterval(() => {
       setCurrentImageIndex(prevIndex => (prevIndex + 1) % imageUrls.length);
-    }, 3000);
-    setTimer(newTimer);
+    }, 5000);  // You mentioned 5 seconds in the description, but the code has 3000 ms (3 seconds)
+    console.log("Starting new timer");
   };
 
   useEffect(() => {
     resetAndStartTimer();
+    // Cleanup function to clear the timer when the component unmounts or imageUrls.length changes
     return () => {
-      if (timer) {
-        clearInterval(timer);
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
       }
     };
-  }, [imageUrls.length]);
+  }, [imageUrls.length]);  // useEffect depending on imageUrls.length to restart the timer when it changes
 
   const handleIndicatorClick = (index: number) => {
     setCurrentImageIndex(index);
@@ -66,6 +72,7 @@ const ProjectPanel: React.FC<ProjectPanelProps> = ({ project }) => {
       <div className="w-2/5 p-4">
         <h2 className="text-xl font-bold mb-3">{title}</h2>
         <p className="mb-3">{description}</p>
+        <p>{date}</p>
         <ul className="mb-3">
           {techUsed.map((tech, index) => (
             <li key={index} className="inline-block mr-2 px-3 py-1 bg-gray-200 rounded-full text-sm font-medium text-gray-700">{tech}</li>
