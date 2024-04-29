@@ -68,6 +68,33 @@
   z-index: 1;               /* Ensures these elements are above the background */
 }
 
+.project-row {
+  height: 500px;
+}
+
 .left-image-color {
   background-color: #4169E1;
+}
+
+.next-image-btn {
+  color: white;
+  font-size: 41px;
+  top: 37%;
+  z-index:2;
+}
+
+.gallery-img {
+  padding: 3rem;
+}
+
+.next-image-btn:hover {
+  color: #4169E1;
+}
+
+.nib-left {
+  left: 2%
+}
+
+.nib-right {
+  right: 2%;
 }

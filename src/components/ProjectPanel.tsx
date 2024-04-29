@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 interface Project {
   title: string;
   description: string;
-  date: string;
   imageUrls: string[];
   techUsed: string[];
   projectLink: string;
@@ -15,23 +16,18 @@ interface ProjectPanelProps {
 }
 
 const ProjectPanel: React.FC<ProjectPanelProps> = ({ project }) => {
-  const { title, description, date, imageUrls, techUsed, projectLink, imageOnLeft } = project;
+  const { title, description, imageUrls, techUsed, projectLink, imageOnLeft } = project;
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const resetAndStartTimer = () => {
-    // Clear the existing timer
     if (timerRef.current) {
-      console.log("Clearing old timer");
       clearInterval(timerRef.current);
     }
-
-    // Set a new timer
     timerRef.current = setInterval(() => {
       setCurrentImageIndex(prevIndex => (prevIndex + 1) % imageUrls.length);
-    }, 5000);  // You mentioned 5 seconds in the description, but the code has 3000 ms (3 seconds)
-    console.log("Starting new timer");
+    }, 5000);
   };
 
   useEffect(() => {
@@ -42,22 +38,48 @@ const ProjectPanel: React.FC<ProjectPanelProps> = ({ project }) => {
         clearInterval(timerRef.current);
       }
     };
-  }, [imageUrls.length]);  // useEffect depending on imageUrls.length to restart the timer when it changes
+  }, [imageUrls.length]);
 
   const handleIndicatorClick = (index: number) => {
     setCurrentImageIndex(index);
     resetAndStartTimer();
   };
 
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageUrls.length);
+    resetAndStartTimer();
+  };
+
+  const previousImage = () => {
+    console.log("Prvious inmage!")
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + imageUrls.length) % imageUrls.length);
+    resetAndStartTimer();
+  };
+
   return (
-    <div className={`flex ${imageOnLeft ? 'flex-row left-image-color' : 'flex-row-reverse'} items-center`}>
-      <div className="w-3/5 p-4 relative h-96">
-        <div className="absolute inset-0 bg-black opacity-75 theater-mode-background"></div>
-        <img
-          src={imageUrls[currentImageIndex]}
-          alt={`${title} - Image ${currentImageIndex + 1}`}
-          className="max-w-full h-auto mx-auto transition-opacity duration-500 ease-in-out opacity-100 absolute inset-0 w-full h-full object-contain rounded-lg p-8"
-        />
+    <div className={`flex project-row ${imageOnLeft ? 'flex-row left-image-color' : 'flex-row-reverse'} items-center space-x-4`}>
+      {/* <button onClick={previousImage} aria-label="Previous image" className="p-2">
+        &lt;
+      </button> */}
+      <div className="w-3/5 p-4 relative h-full">
+        <button onClick={previousImage} aria-label="Previous image" className="absolute left-0 p-2 next-image-btn nib-left">
+          <FontAwesomeIcon icon={faArrowLeft} />
+        </button>
+        <button onClick={nextImage} aria-label="Next image" className="absolute right-0 p-2 next-image-btn nib-right">
+          <FontAwesomeIcon icon={faArrowRight} />
+        </button>
+        <div className="absolute inset-0 bg-black opacity-75 theater-mode-background">
+        </div>
+        {imageUrls.map((url, index) => (
+          <img
+            key={index}
+            src={url}
+            alt={`${title} - Image ${index + 1}`}
+            className={`transition-opacity duration-500 ease-in-out absolute inset-0 w-full h-full object-contain rounded-lg gallery-img p-8 ${
+              index === currentImageIndex ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
         <div className="flex justify-center space-x-2 mt-2 absolute bottom-0 w-full pb-4">
           {imageUrls.map((_, index) => (
             <button
@@ -69,10 +91,12 @@ const ProjectPanel: React.FC<ProjectPanelProps> = ({ project }) => {
           ))}
         </div>
       </div>
+      {/* <button onClick={nextImage} aria-label="Next image" className="p-2">
+        &gt;
+      </button> */}
       <div className="w-2/5 p-4">
         <h2 className="text-xl font-bold mb-3">{title}</h2>
         <p className="mb-3">{description}</p>
-        <p>{date}</p>
         <ul className="mb-3">
           {techUsed.map((tech, index) => (
             <li key={index} className="inline-block mr-2 px-3 py-1 bg-gray-200 rounded-full text-sm font-medium text-gray-700">{tech}</li>
