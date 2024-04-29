@@ -13,6 +13,15 @@
       "imageOnLeft": true
     },
     {
+      "title": "Fantasy Postseason Challenge",
+      "date": "-",
+      "description": "",
+      "imageUrls": ["/fpc-1.png", "/fpc-2.png", "/fpc-3.png"],
+      "techUsed": [],
+      "projectLink": "",
+      "imageOnLeft": false
+    },
+    {
       "title": "Wtrd",
       "description": "A plant care app",
       "date": "-",
@@ -22,21 +31,12 @@
         "TypeScript"
       ],
       "projectLink": "https://walkthevote.us/",
-      "imageOnLeft": false
+      "imageOnLeft": true
     },
     {
       "title": "StarGrids",
       "description": "A daily 3x3 movie trivia game",
       "date": "-",
-      "imageUrls": ["link"],
-      "techUsed": [],
-      "projectLink": "",
-      "imageOnLeft": true
-    },
-    {
-      "title": "Fantasy Postseason Challenge",
-      "date": "-",
-      "description": "",
       "imageUrls": ["link"],
       "techUsed": [],
       "projectLink": "",
