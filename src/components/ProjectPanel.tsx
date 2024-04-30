@@ -1,22 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Project } from '../types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-
-interface Project {
-  title: string;
-  description: string;
-  imageUrls: string[];
-  techUsed: string[];
-  projectLink: string;
-  imageOnLeft: boolean;
-}
+import { FaGithub } from 'react-icons/fa';
+import { getLogoPath } from '../utilities';
 
 interface ProjectPanelProps {
   project: Project;
 }
 
 const ProjectPanel: React.FC<ProjectPanelProps> = ({ project }) => {
-  const { title, description, imageUrls, techUsed, projectLink, imageOnLeft } = project;
+  const { title, description, imageUrls, startDate, endDate, techUsed, projectLink, imageOnLeft, githubLink } = project;
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
@@ -91,18 +85,34 @@ const ProjectPanel: React.FC<ProjectPanelProps> = ({ project }) => {
           ))}
         </div>
       </div>
-      {/* <button onClick={nextImage} aria-label="Next image" className="p-2">
+      {/* <button onClick={nextImage} aria-label="Next image" classNames="p-2">
         &gt;
       </button> */}
       <div className="w-2/5 p-4">
-        <h2 className="text-xl font-bold mb-3">{title}</h2>
-        <p className="mb-3">{description}</p>
-        <ul className="mb-3">
+        <h1 className="text-xl font-bold mb-3 project-title">{title}</h1>
+        <h3>{startDate} - {endDate}</h3>
+        <p className="mb-3 description">{description}</p>
+        <ul className="mb-3 techpill-wrapper">
           {techUsed.map((tech, index) => (
-            <li key={index} className="inline-block mr-2 px-3 py-1 bg-gray-200 rounded-full text-sm font-medium text-gray-700">{tech}</li>
+            <li key={index} className="inline-block mr-2 px-3 py-1 bg-gray-200 rounded-full text-sm font-medium text-gray-700 tech-pill">
+              {tech}
+              <img className={`pill-img ${tech}`} src={getLogoPath(tech)}></img>
+              </li>
           ))}
         </ul>
-        <a href={projectLink} className="inline-block bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600">View Project</a>
+        <div className="button-wrapper">
+          <a href={projectLink} target="_blank" className="inline-block bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 cta-btn">View Project</a>
+          <a href={githubLink} target="_blank" className="inline-block bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 cta-btn btn-internal-wrapper">
+            View Source Code
+            <FaGithub size={24} />
+          </a>
+          {/* <a href={githubLink} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-300 hover:text-gray-100 mx-2">
+            <FaGithub size={24} />
+          </a> */}
+        </div>
       </div>
     </div>
   );

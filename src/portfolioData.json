@@ -2,44 +2,57 @@
   "Projects": [
     {
       "title": "Walk the Vote",
-      "description": "Walk the Vote description",
-      "date": "Aug 2020 - Nov 2020",
+      "description": "An initiative to promote voting via ballot drop-off in the 2020 election amidst the attack on the US Postal Service and the COVID-19 pandemic.",
+      "startDate": "Aug 2020",
+      "endDate": "Nov 2020",
       "imageUrls": ["/wtvscreenshot1.png", "/wtvscreenshot2.png"],
       "techUsed": [
         "Python",
-        "Vue.js"
+        "Vue.js",
+        "MongoDB",
+        "JavaScript"
       ],
       "projectLink": "https://walkthevote.us/",
+      "githubLink": "https://github.com/Acesonnall/WalkTheVote",
       "imageOnLeft": true
     },
     {
       "title": "Fantasy Postseason Challenge",
-      "date": "-",
-      "description": "",
+      "description": "A basic fantasy lineup website featuring the ability to have custom scoring rules and private leagues.",
+      "startDate": "Dec 2023",
+      "endDate": "Jan 2024",
       "imageUrls": ["/fpc-1.png", "/fpc-2.png", "/fpc-3.png"],
-      "techUsed": [],
-      "projectLink": "",
+      "techUsed": [
+        "Python",
+        "Flask"
+      ],
+      "projectLink": "https://postseasonchallenge-fc691760f821.herokuapp.com",
+      "githubLink": "https://github.com/rohbat/fantasy_postseason_challenge",
       "imageOnLeft": false
     },
     {
       "title": "Wtrd",
       "description": "A plant care app",
-      "date": "-",
+      "startDate": "Aug 2020",
+      "endDate": "Nov 2020",
       "imageUrls": ["link"],
       "techUsed": [
         "React",
         "TypeScript"
       ],
       "projectLink": "https://walkthevote.us/",
+      "githubLink": "",
       "imageOnLeft": true
     },
     {
       "title": "StarGrids",
       "description": "A daily 3x3 movie trivia game",
-      "date": "-",
+      "startDate": "Aug 2020",
+      "endDate": "Nov 2020",
       "imageUrls": ["link"],
       "techUsed": [],
       "projectLink": "",
+      "githubLink": "",
       "imageOnLeft": false
     }
   ]
