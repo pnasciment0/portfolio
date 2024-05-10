@@ -67,7 +67,7 @@ const ProjectPanel: React.FC<ProjectPanelProps> = ({ project }) => {
         {imageUrls.map((url, index) => (
           <img
             key={index}
-            src={url}
+            src={`/assets/screenshots${url}`}
             alt={`${title} - Image ${index + 1}`}
             className={`transition-opacity duration-500 ease-in-out absolute inset-0 w-full h-full object-contain rounded-lg gallery-img p-8 ${
               index === currentImageIndex ? "opacity-100" : "opacity-0"

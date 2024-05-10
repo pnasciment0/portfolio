@@ -13,6 +13,7 @@ const NavBar: React.FC = () => {
             <ul className="flex space-x-5">
             <li><Link to="/" className="hover:text-gray-400">Home</Link></li>
               <li><Link to="/projects" className="hover:text-gray-400">Projects</Link></li>
+              <li><Link to="/resume" className="hover:text-gray-400">Resume</Link></li>
               <li><a href="#" className="hover:text-gray-400">About</a></li>
               <li><a href="#" className="hover:text-gray-400">Contact</a></li>
             </ul>

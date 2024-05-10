@@ -73,7 +73,7 @@
 }
 
 .left-image-color {
-  background-color: #4169E1;
+  background-color: white;
 }
 
 .next-image-btn {
@@ -162,4 +162,10 @@
 
 .description {
   padding-top: 30px;
+}
+
+.resume-text {
+  font-size: 54px;
+  padding-top: 20px;
+  padding-bottom: 30px;
 }

@@ -1,12 +1,10 @@
 // src/App.tsx
 import './App.css';
-import NavBar from './components/NavBar';
+import NavBar from './components/NavBar'
 import Footer from './components/Footer';
-import Panel from './components/Panel';
-import ProjectTile from './components/ProjectTile';
 import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom';
-import wtvLogo from './assets/wtvlogo.png';
 import ProjectsPage from './pages/ProjectsPage';
+import ResumePage from './pages/ResumePage';
 import HomePage from './pages/HomePage';
 
 function App() {
@@ -17,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/projects" element={<ProjectsPage/>} />
+          <Route path="/resume" element={<ResumePage/>} />
         </Routes>
         <Footer />
       </div>
