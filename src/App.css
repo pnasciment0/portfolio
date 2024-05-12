@@ -181,3 +181,15 @@
 .resume-description {
   padding-bottom: 35px;
 }
+
+.project-tile {
+  width: 485px;
+  height: 450px;
+  margin: 0 auto;
+}
+
+.resume-cta {
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+}

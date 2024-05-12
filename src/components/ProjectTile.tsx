@@ -18,7 +18,7 @@ function ProjectTile({ projectName, imageUrl, description }: ProjectTileProps) {
       onMouseLeave={() => setIsHovered(false)}
     >
       {imageUrl ? (
-        <img src={imageUrl} alt={projectName} className="w-full h-auto" />
+        <img src={imageUrl} alt={projectName} className="w-full h-auto project-tile" />
       ) : (
         <div className="flex justify-center items-center h-32 w-full bg-gray-200">
           <span className="text-xl text-gray-500">No Image Available</span>

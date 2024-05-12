@@ -1,9 +1,7 @@
 import React from 'react';
 import Panel from '../components/Panel';
 import ProjectTile from '../components/ProjectTile';
-// import wtvLogo from '../../public/wtvlogo.png';
 import { Link } from 'react-router-dom';
-import projectsData from '../portfolioData.json';
 
 const HomePage: React.FC = () => {
     return (
@@ -17,9 +15,9 @@ const HomePage: React.FC = () => {
         <Panel>
           <h2 className="text-lg md:text-xl lg:text-2xl font-bold featproj">Featured Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <ProjectTile projectName="Walk the Vote" imageUrl={"wtvlogo.png"} description={""}/>
-            <ProjectTile projectName="StarGrids" />
-            <ProjectTile projectName="Fantasy Postseason Challenge" />
+            <ProjectTile projectName="Walk the Vote" imageUrl={"wtvlogo.png"} description={"A grassroots voting initiative for the 2020 election."}/>
+            <ProjectTile projectName="StarGrids" imageUrl={"stargrids.png"} description={"A daily 3x3 movie trivia game."}/>
+            <ProjectTile projectName="Fantasy Postseason Challenge" imageUrl={"postseasonchallengeicon.png"} description={"A platform for custom fantasy football games."}/>
           </div>
           <div className="mt-8">
             <Link to="/projects" className="inline-block bg-blue-500 text-white py-2 px-6 rounded hover:bg-blue-600 active:bg-blue-700 transition duration-300">
@@ -28,7 +26,9 @@ const HomePage: React.FC = () => {
           </div>
         </Panel>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-20 darkpanel">
-            Hi
+            <Link to="/resume">
+             <p className='resume-cta'>Check out my resume!</p>  
+            </Link>     
         </div>
       </>
     );
