@@ -167,5 +167,17 @@
 .resume-text {
   font-size: 54px;
   padding-top: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 5px;
+}
+
+.resume-dl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 200px;
+  margin: 30px auto 40px auto;
+}
+
+.resume-description {
+  padding-bottom: 35px;
 }
